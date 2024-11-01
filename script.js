@@ -19,7 +19,8 @@ function main() {
             gridSquare.setAttribute("class", "grid-square");
 
             gridSquare.addEventListener("mouseover", () => {
-                gridSquare.style.backgroundColor = "rgb(0,0,0)";
+                let color = "rgb(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")";
+                gridSquare.style.backgroundColor = color;
             })
 
             gridRow.appendChild(gridSquare);
@@ -31,6 +32,11 @@ function main() {
         container.innerHTML = "";
         main();
     })
+}
+
+function getRandomColor() {
+    let colorValue = Math.floor(Math.random() * 255);
+    return "" + colorValue;
 }
 
 main();
